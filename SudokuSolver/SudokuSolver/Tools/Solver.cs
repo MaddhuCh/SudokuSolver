@@ -86,8 +86,8 @@ namespace SudokuSolver.Tools
 
         private static IEnumerable<SudokuCell> GetBox(int iIndex, int jIndex)
         {
-            var iBox = iIndex / _boxSize;
-            var jBox = jIndex / _boxSize;
+            var iBox = iIndex / _boxSize; //iIndex can go from 0-8 and 0-8/3 would give 0,1,2 which would identify the box
+            var jBox = jIndex / _boxSize; //jIndex can go from 0-8 and 0-8/3 would give 0,1,2 which would identify the box
 
             for (int i = iBox * _boxSize; i < (iBox + 1) * _boxSize; i++)
                 for (int j = jBox * _boxSize; j < (jBox + 1) * _boxSize; j++)
